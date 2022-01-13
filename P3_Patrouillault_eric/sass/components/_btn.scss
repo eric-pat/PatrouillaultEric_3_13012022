@@ -1,11 +1,37 @@
-.search__btn {
+.btn {
     border: 0;
-    padding: 12px 24px;
-    font-size: 1.1rem;
-    border-radius: 100px;
-    color: #fff;
-    background: linear-gradient( #FF79DA, #9356DC);
-    cursor: pointer;
     box-shadow: .25rem .25rem 10px rgba(0,0,0,.25);
+}
+
+.search__btn {
+    background: linear-gradient( $colour-secondary, $colour-primary);
+    border-radius: 100px;
+    height:50px;
     margin: 30px 0 0 0;
+    padding: 12px 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.search__btn:hover {
+    background: linear-gradient( $colour-primary,$colour-secondary);
+}
+
+.functionning__btn {
+    background-color: $colour-quinary;
+    border-radius: 20px;
+    height: 75px;
+    margin: 10px 0 10px 0;
+    width: 100%;
+    @media screen and (min-width:1024px) {
+        padding: 0 40px 0 80px;
+    }
+}  
+
+.btn-3 {
+    background-color:#eee0ea ;
+}
+
+.functionning__btn:hover {
+    background-color:#eee0ea ;
 }

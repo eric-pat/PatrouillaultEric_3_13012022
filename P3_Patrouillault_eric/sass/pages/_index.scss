@@ -3,3 +3,24 @@
     padding: 45px 20px 60px 20px;
     background-color: $colour-quinary;
 }
+
+.functionning {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 40px 20px 40px 30px;
+    @media screen and (min-width:1024px) {
+        flex-wrap: wrap;
+        flex-direction: row;
+        column-gap: 1000px;
+        align-items: baseline;
+    }
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $colour-quinary;
+    padding-top: 40px;
+}
