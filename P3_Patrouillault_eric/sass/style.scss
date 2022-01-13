@@ -1,0 +1,25 @@
+@import "./base/base";
+@import "./base/typography";
+
+@import "./utils/variables";
+
+@import "./layout/header";
+
+@import "./components/btn";
+@import "./components/input";
+
+@import "./pages/index"
+
+
+
+
+
+/* Ordre d'import
+Base: police, box-sizing
+Utils: variables,fonctions, mixins, %placeholders
+Layout: mise en page, header, footer, form
+Composants: boutons
+Pages: règles spécifique pour une seule page
+Themes: style customisé (noël, été ...)
+Vendors: Css exterieur (bootstrap, jquery...)
+*/
