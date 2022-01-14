@@ -17,6 +17,15 @@
     }
 }
 
+.restaurants__title {
+    margin-left: 20px;
+    @media screen and (min-width:1024px) {
+       margin-left: 31px;
+    }
+}
+
+
+
 .cards-container {
     display: flex;
     flex-direction: column;

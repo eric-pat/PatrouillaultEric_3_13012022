@@ -1,9 +1,5 @@
-.btn {
-    border: 0;
-    box-shadow: .25rem .25rem 10px rgba(0,0,0,.25);
-}
-
 .search__btn {
+    @include btn;
     background: linear-gradient( $colour-secondary, $colour-primary);
     border-radius: 100px;
     height:50px;
@@ -11,13 +7,13 @@
     padding: 12px 24px;
     color: #fff;
     cursor: pointer;
-}
-
-.search__btn:hover {
-    background: linear-gradient( $colour-primary,$colour-secondary);
+    &:hover {
+        background: linear-gradient( $colour-primary,$colour-secondary);
+    }
 }
 
 .functionning__btn {
+    @include btn;
     background-color: $colour-quinary;
     border-radius: 20px;
     height: 75px;
@@ -28,10 +24,3 @@
     }
 }  
 
-.btn-3 {
-    background-color:#eee0ea ;
-}
-
-.functionning__btn:hover {
-    background-color:#eee0ea ;
-}

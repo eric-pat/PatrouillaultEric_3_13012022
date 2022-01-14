@@ -8,68 +8,129 @@
     @media screen and (min-width:1024px) {
         flex-direction: row;
         column-gap: 80px;
+        align-items: center;
     }
-    
-}
-
-.functionning__step {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 25px;
-    height: 25px;
-    border-radius: 90px;
-    background: #9356dc;
-    color: #ffffff;
-    position: relative;
-    margin:-10px
-}
-
-.functionning__icon {
-    display: flex;
-    align-items: center;
-    color: grey;
-}
-
-.functionning i {
-    position: absolute;
-    margin-left: 30px;
-    font-size: 21px;
-    @media screen and (min-width:1024px) {
-        padding-left: 10px;
+    &.step {
+        display: flex;
+        justify-content: center;
+        color: grey;
+        @media screen and (min-width: 1024px) {
+            justify-content: flex-start;
+        }
+        &:hover {
+            .functionning__btn {
+                background-color:$colour-senary;
+            }
+            i.fas.fa-mobile-alt, i.fas.fa-list-ul, i.fas.fa-store {
+                color: $colour-primary;
+            }
+        }
     }
-}
-
-i.fas.fa-store {
-    color: $colour-primary;
+    &.number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 25px;
+        height: 25px;
+        border-radius: 90px;
+        background: $colour-primary;
+        color: #ffffff;
+        position: absolute;
+        margin:-10px
+    }
+    &.step i {
+        position: absolute;
+        margin-left: 30px;
+        font-size: 21px;
+        @media screen and (min-width:1024px) {
+            padding-left: 10px;
+        }
+    }
 }
 
 /* Restaurants List */
 .restaurants__list {
-    list-style: none;
-    margin: 0 20px 20px 20px;
-    padding: 0;
-}
-
-.restaurants__card {
-    display:flex;
+    display: flex;
     flex-direction: column;
-    background-color: white;
-    border-radius: 18px ;
-    box-shadow: 0px px 3px 0px #0000002e;
-    cursor: pointer;
-    margin-bottom: 37px;
-    font-size: 14px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    @media screen and (min-width:1024px) {
+        flex-direction: row;
+        width: 430px;
+        flex-shrink: 0;
+        margin-left: 12px;
+    }
+    &.card {
+        background-color: white;
+        border-radius: 18px ;
+        box-shadow: 0px px 3px 0px #0000002e;
+        cursor: pointer;
+        margin: 0 20px 20px 20px;
+        img {
+            max-height: 170px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 18px 18px 0 0;
+        }
+        &.txt {
+            color:black;
+            padding-top: 15px;
+            margin: 0;
+            @media screen and (min-width:1024px) {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+        &.name {
+            font-weight: bold;
+            width: 70%;
+            margin-bottom: 5px;
+        }
+        &.city {
+            width: 70%;
+            margin-bottom: 18px;
+        }
+        &.card i{
+            position: absolute;
+            font-size: 26px;
+            padding-left: 290px;
+            color: grey;
+            &:hover::before {
+                content: "\f004";
+                font-weight: bold;
+                background: -webkit-gradient(linear, left top, left bottom, from($colour-primary), to($colour-secondary));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            @media screen and (min-width:1024px) {
+                position: inherit;
+                padding: 0px;
+            }
+        }
+    }
 }
 
-.restaurants {
-    color:black;
-    padding: 15px 0 20px 15px;
-}
-
-.restaurants__name {
-    padding-bottom: 8px;
+/* footer list*/
+.footer {
+    background-color: rgb(39, 39, 39);
+    color: white;
+    padding: 10px;
     font-weight: bold;
+    &.title {
+        font-style: italic;
+    }
+    &.list {
+        list-style: none;
+    }
+    &.list li {
+        font-size: 14px
+    }
+       
 }
+
+
+
+
 
