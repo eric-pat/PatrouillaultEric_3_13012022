@@ -1,20 +1,18 @@
-input{
-    background-color: $colour-quaternary;
-    height: 55px;
-    text-align: center;
-    font-weight: bold;
-    border-width: 0;
-    color: #666;
-}
-
 .search__city{
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: $colour-quaternary;
+    &.search__input{
+        height: 55px;
+        text-align: center;
+        font-weight: bold;
+        border-width: 0;
+        color: rgb(51, 51, 51);
+    }
+    i {
+        position: absolute;
+        padding-right: 185px;
+    }
 }
 
-.search__city i {
-    position: absolute;
-    padding-right: 185px;
-}

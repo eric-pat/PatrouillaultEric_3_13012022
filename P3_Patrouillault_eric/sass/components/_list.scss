@@ -1,5 +1,5 @@
 /* Functionning List */
-.functionning__list{
+.functionning__list {
     margin: 0;
     padding: 0;
     display: flex;
@@ -10,7 +10,7 @@
         column-gap: 80px;
         align-items: center;
     }
-    &.step {
+    &.functionning__step {
         display: flex;
         justify-content: center;
         color: grey;
@@ -26,7 +26,7 @@
             }
         }
     }
-    &.number {
+    &.functionning__number {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -39,7 +39,7 @@
         position: absolute;
         margin:-10px
     }
-    &.step i {
+    &.functionning__step i {
         position: absolute;
         margin-left: 30px;
         font-size: 21px;
@@ -54,81 +54,99 @@
     display: flex;
     flex-direction: column;
     list-style: none;
-    margin: 0;
+    margin: 0 13px 0 0;
     padding: 0;
+    @media screen and (min-width:781px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
     @media screen and (min-width:1024px) {
         flex-direction: row;
-        width: 430px;
-        flex-shrink: 0;
-        margin-left: 12px;
+        flex-shrink: 1;
+        justify-content: center;
     }
-    &.card {
+    &.restaurants__card {
         background-color: white;
         border-radius: 18px ;
-        box-shadow: 0px px 3px 0px #0000002e;
+        box-shadow: 0px 0px 3px 0px #0000002e;
         cursor: pointer;
         margin: 0 20px 20px 20px;
+        @media screen and (min-width:781px) {
+            margin: 0 20px 20px 0;
+        }
+        @media screen and (min-width:1024px) {
+            width: -moz-available;
+        }
         img {
-            max-height: 170px;
+            height: 170px;
             width: 100%;
             object-fit: cover;
             border-radius: 18px 18px 0 0;
+            @media screen and (min-width:1024px) {
+                flex-direction: row;
+                flex-shrink: 1;
+            }
         }
-        &.txt {
+        &.restaurants__txt {
             color:black;
-            padding-top: 15px;
+            padding: 0 0 0 10px;
             margin: 0;
             @media screen and (min-width:1024px) {
                 flex-wrap: wrap;
-                justify-content: center;
+                justify-content: flex-start;
+                min-width: 150px;
             }
-        }
-        &.name {
-            font-weight: bold;
-            width: 70%;
-            margin-bottom: 5px;
-        }
-        &.city {
-            width: 70%;
-            margin-bottom: 18px;
-        }
-        &.card i{
-            position: absolute;
-            font-size: 26px;
-            padding-left: 290px;
-            color: grey;
-            &:hover::before {
-                content: "\f004";
+            &.restaurants__name {
                 font-weight: bold;
-                background: -webkit-gradient(linear, left top, left bottom, from($colour-primary), to($colour-secondary));
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
+                width: 70%;
+                margin: 10px 0 5px 0;
             }
-            @media screen and (min-width:1024px) {
-                position: inherit;
-                padding: 0px;
+            &.restaurants__city {
+                width: 70%;
+                margin-bottom: 18px;
+            }
+            &.restaurants__card i{
+                position: absolute;
+                font-size: 26px;
+                padding: 10px 0 0 275px;
+                color: grey;
+                &:hover::before {
+                    content: "\f004";
+                    font-weight: bold;
+                    background: -webkit-gradient(linear, left top, left bottom, from($colour-primary), to($colour-secondary));
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+                @media screen and (min-width:781px) {
+                    position: unset;
+                    padding: 10px 0 0 30px;
+                }
+                @media screen and (min-width:1024px) {
+                    position: unset;
+                    padding: 10px 0 0 30px;
+                }
             }
         }
     }
 }
 
-/* footer list*/
-.footer {
-    background-color: rgb(39, 39, 39);
-    color: white;
-    padding: 10px;
-    font-weight: bold;
-    &.title {
-        font-style: italic;
+.new__contenant {
+    position: relative;
+    text-align: center;
+    .new__txt {
+        background-color: $colour-tertiary;
+        color: #0e7238;
+        position: absolute;
+        top: 8%;
+        left: 70%;
+        font-size: 14px;
+        padding: 5px 10px;
     }
-    &.list {
-        list-style: none;
-    }
-    &.list li {
-        font-size: 14px
-    }
-       
 }
+
+
+
 
 
 
