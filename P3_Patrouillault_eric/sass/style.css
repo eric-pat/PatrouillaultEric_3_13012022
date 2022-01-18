@@ -14,7 +14,8 @@ p, button {
 }
 
 h1, h2, h3, h4 {
-  font-family: "Shrikhand-Regular";
+  font-family: "Shrikhand", cursive;
+  font-weight: 400;
 }
 
 h1 {
@@ -25,6 +26,10 @@ h1 {
 h2 {
   font-size: 23px;
   margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 19px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -39,7 +44,28 @@ h2 {
   }
 }
 
-/*septenary*/
+/* page index */
+/* page menu- */
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header i {
+  display: inline-block;
+  font-size: 22px;
+  position: relative;
+  color: black;
+  right: 50px;
+}
+
 .header__logo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -88,6 +114,7 @@ h2 {
   padding: 5px 0 5px 0;
 }
 
+/* search restaurant */
 .search__btn {
   border: 0;
   -webkit-box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
@@ -107,6 +134,7 @@ h2 {
   background: linear-gradient(#9356DC, #FF79DA);
 }
 
+/* step functionning */
 .functionning__btn {
   border: 0;
   -webkit-box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
@@ -133,6 +161,7 @@ h2 {
   }
 }
 
+/* input search city */
 .search__city {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -399,6 +428,7 @@ h2 {
   padding: 5px 10px;
 }
 
+/* loading spinner */
 .loader {
   position: absolute;
   left: 53%;
@@ -526,6 +556,132 @@ h2 {
           justify-content: center;
   background-color: #F2F2F2;
   padding-top: 40px;
+}
+
+.menu__img img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.menu__restaurants {
+  background-color: #F2F2F2;
+  border-radius: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  margin-top: -40px;
+  padding: 30px 20px 40px 20px;
+}
+
+.menu__restaurants h1 {
+  font-size: 28px;
+}
+
+.menu__restaurants #heart-menu {
+  position: absolute;
+  right: 40px;
+  font-size: 30px;
+}
+
+.menu__restaurants #heart-menu:hover::before {
+  content: "\f004";
+  font-weight: bold;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.menu__starter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.menu__starter.starter__title {
+  border-bottom: 3px solid #99E2D0;
+  width: 46px;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.menu__starter.menu__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: white;
+  border-radius: 15px;
+  font-family: "Roboto-Medium", sans-serif;
+  cursor: pointer;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.menu__starter.menu__card.txt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.menu__starter.menu__card.txt.name {
+  font-weight: bold;
+}
+
+.menu__starter.menu__card.price {
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.menu__starter.menu__card.validate {
+  background-color: #99E2D0;
+  color: white;
+  margin: -1rem -5rem -1rem 1rem;
+  width: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
+}
+
+.menu__starter.menu__card.validate i {
+  font-size: 22px;
+}
+
+.menu__starter.menu__card:hover .validate {
+  -webkit-transform: translate(-100%);
+          transform: translate(-100%);
 }
 
 /* Ordre d'import

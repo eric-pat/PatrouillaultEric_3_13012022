@@ -1,3 +1,4 @@
+/* search restaurant */
 .search__btn {
     @include btn;
     background: linear-gradient( $colour-secondary, $colour-primary);
@@ -12,6 +13,7 @@
     }
 }
 
+/* step functionning */
 .functionning__btn {
     @include btn;
     display: flex;

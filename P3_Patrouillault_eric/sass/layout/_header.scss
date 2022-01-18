@@ -1,5 +1,19 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+        display: inline-block;
+        font-size: 22px;
+        position: relative;
+        color: black;
+        right: 50px;
+    }
+}
+
 .header__logo {
     display: flex;
     justify-content: center;
     margin: 20px 0 15px 0;
 }
+

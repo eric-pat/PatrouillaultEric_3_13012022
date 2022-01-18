@@ -1,0 +1,72 @@
+.menu__img img{
+    width: 100%;
+    object-fit: contain;
+} 
+    
+.menu__restaurants {
+    background-color: $colour-quinary;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: -40px;
+    padding: 30px 20px 40px 20px;
+    h1 {
+        font-size: 28px;
+    }
+    #heart-menu {
+        position: absolute;
+        right: 40px;
+        font-size: 30px;
+        @include heart;
+    }  
+}
+
+.menu__starter {
+    display: flex;
+    flex-direction: column;
+    &.starter__title {
+        border-bottom: 3px solid $colour-tertiary;
+        width: 46px;
+        padding-bottom:  5px;
+        margin-bottom: 15px;
+    }  
+    &.menu__card {
+        @include card;
+        justify-content: space-between;
+        &.txt {
+            display: flex;
+            flex-direction: column;
+            &.name {
+                font-weight: bold;
+            }
+            &.accompaniment {
+            }
+        }
+       
+        &.price {
+            font-weight: bold;
+            display: flex;
+            align-items: flex-end;
+        }
+        &.validate {
+            background-color: $colour-tertiary;
+            color: $colour-septenary;
+            margin: -1rem -5rem -1rem 1rem;
+            width: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition-duration: .5s;
+            i {
+                font-size: 22px;
+                
+            }
+        }
+        &:hover .validate {
+            transform: translate(-100%);
+        }
+    }    
+}
+
+
