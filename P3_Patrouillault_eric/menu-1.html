@@ -12,7 +12,7 @@
     integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="sass/style.css" type="text/css">
-  <title>ohmyfood</title>
+  <title>ohmyfood:La palette du goût</title>
 
   <scrip src="app.js"></scrip>
 
@@ -32,36 +32,38 @@
   <main>
 
     <!-- Menu -->
-    <section class="menu">
-      <div id="menu-1" class="menu__img">
-        <img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La palette du goût">
-      </div>
-      <div class="menu__restaurants">
-        <h1>La palette du goût</h1>
-        <i id="heart-menu" class="far fa-heart"></i>
 
-        <div class="menu__starter">
-          <p class="menu__starter starter__title">ENTRÉES</p>
+    <div id="menu-1" class="menu__img">
+      <img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La palette du goût">
+    </div>
+    <div class="menu__restaurants">
+      <h1>La palette du goût</h1>
+      <i id="heart-menu" class="far fa-heart"></i>
+    </div>
 
-          <div class="menu__starter menu__card ">
-            <div class="menu__starter menu__card txt">
-              <h3 class="menu__starter menu__card txt name">Fricassée d'escargot</h3>
-              <p class="menu__starter menu__card txt accompaniment">Au piment d'espelette</p>
-            </div>
-            <div class="menu__starter menu__card price">25€</div>
-            <div class="menu__starter menu__card validate">
-              <i class="fas fa-check-circle" aria-hidden="true"></i>
-            </div>
+    <section class="menu-integral">
+      <!-- englobe les entrees plats dessert -->
+      <section class="starter">
+        <p class="title">ENTRÉES</p>
+
+        <div class="card ">
+          <div class="txt">
+            <h3 class="txt name">Fricassée d'escargot</h3>
+            <p class="txt accompaniment">Au piment d'espelette</p>
           </div>
-
-
-
+          <div class="card price">25€</div>
+          <div class="card validate">
+            <i class="fas fa-check-circle " aria-hidden="true"></i>
+          </div>
         </div>
+       
+      </section>
 
+      <section class="menu__dish">
 
-        <div class="menu__dish"></div>
-        <div class="menu__dessert"></div>
-      </div>
+      </section>
+      <section class="menu__dessert"></section>
+
     </section>
     <!-- End Menu -->
 

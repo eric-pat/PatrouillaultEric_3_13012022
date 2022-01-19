@@ -558,6 +558,7 @@ h3 {
   padding-top: 40px;
 }
 
+/* header menu */
 .menu__img img {
   width: 100%;
   -o-object-fit: contain;
@@ -566,7 +567,7 @@ h3 {
 
 .menu__restaurants {
   background-color: #F2F2F2;
-  border-radius: 50px;
+  border-radius: 50px 50px 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -597,57 +598,92 @@ h3 {
   -webkit-text-fill-color: transparent;
 }
 
-.menu__starter {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+/* all menus */
+.menu-integral {
+  background-color: #F2F2F2;
 }
 
-.menu__starter.starter__title {
+/* starter */
+.title {
   border-bottom: 3px solid #99E2D0;
   width: 46px;
   padding-bottom: 5px;
-  margin-bottom: 15px;
+  margin: 0 0 15px 15px;
 }
 
-.menu__starter.menu__card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+.card {
   background-color: white;
   border-radius: 15px;
-  font-family: "Roboto-Medium", sans-serif;
   cursor: pointer;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.menu__starter.menu__card.txt {
+  padding: 0 0 0 7px;
+  margin: 5px 9px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
-.menu__starter.menu__card.txt.name {
+.card.validate {
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.card:hover .validate {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #99E2D0;
+  color: white;
+  border-radius: 0 15px 15px 0;
+  padding: 0;
+  width: 3.5rem;
+  -webkit-transform: scalex(1);
+          transform: scalex(1);
+  -webkit-transition: -webkit-transform 600ms ease-out 50ms;
+  transition: -webkit-transform 600ms ease-out 50ms;
+  transition: transform 600ms ease-out 50ms;
+  transition: transform 600ms ease-out 50ms, -webkit-transform 600ms ease-out 50ms;
+}
+
+.card:hover .validate i {
+  font-size: 22px;
+}
+
+.txt {
+  width: 100%;
+  display: inline-block;
+  font-family: "Roboto-Medium", sans-serif;
+}
+
+.txt.name {
+  white-space: nowrap;
+  /*le texte ne revient pas à la ligne*/
   font-weight: bold;
+  padding-bottom: 0;
+  padding-top: 5px;
 }
 
-.menu__starter.menu__card.price {
+.txt.accompaniment {
+  white-space: nowrap;
+  /*le texte ne revient pas à la ligne*/
+  text-overflow: ellipsis;
+  /*la fin du texte fini par ...*/
+  overflow: hidden;
+  /*coupe le texte si il depasse */
+  padding-top: 0;
+  padding-bottom: 5px;
+}
+
+.txt:hover {
+  width: 64%;
+}
+
+.price {
   font-weight: bold;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -655,33 +691,11 @@ h3 {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-}
-
-.menu__starter.menu__card.validate {
-  background-color: #99E2D0;
-  color: white;
-  margin: -1rem -5rem -1rem 1rem;
-  width: 4rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-transition-duration: .5s;
-          transition-duration: .5s;
-}
-
-.menu__starter.menu__card.validate i {
-  font-size: 22px;
-}
-
-.menu__starter.menu__card:hover .validate {
-  -webkit-transform: translate(-100%);
-          transform: translate(-100%);
+  font-family: "Roboto-Medium", sans-serif;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-right: 16px;
 }
 
 /* Ordre d'import

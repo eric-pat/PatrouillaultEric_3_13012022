@@ -13,15 +13,14 @@
         -webkit-text-fill-color: transparent;
     }
 }
+
 /* page menu- */
 @mixin card {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     background-color: $colour-septenary;
     border-radius: 15px;
-    font-family: $font-family-sans-serif;
     cursor: pointer;
+    padding: 0 0 0 7px;
+    margin: 5px 9px;
 }
 
 
