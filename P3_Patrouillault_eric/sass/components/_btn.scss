@@ -1,4 +1,12 @@
-/* search restaurant */
+/* button search and command */
+.search-and-command {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 45px 35px 60px 35px;
+    background-color: $colour-quinary;
+}
+
 .search__btn {
     @include btn;
     background: linear-gradient( $colour-secondary, $colour-primary);
@@ -8,6 +16,7 @@
     padding: 12px 24px;
     color: #fff;
     cursor: pointer;
+    font-weight: bold;
     &:hover {
         background: linear-gradient( $colour-primary,$colour-secondary);
     }
@@ -24,8 +33,12 @@
     height: 75px;
     margin: 10px 0 10px 0;
     width: 100%;
-    @media screen and (min-width:1024px) {
-        padding: 0 40px 0 80px;
+    @media screen and (min-width:768px) and (max-width:991px) {
+        padding: 0 20px 0 50px;
+    }
+    @media screen and (min-width:992px) {
+        padding: 0 40px 0 70px;
+
     }
 }  
 
