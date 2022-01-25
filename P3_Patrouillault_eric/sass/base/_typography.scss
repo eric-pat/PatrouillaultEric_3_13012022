@@ -1,9 +1,6 @@
 $font-family-sans-serif: 'Roboto-Medium', sans-serif;
 $font-family-cursive: 'Shrikhand', cursive;
 
- 
- // 1. Prevent iOS and IE text size adjust after device orientation change,
-   //    without disabling user zoom.
 p, button {
 	font-family: $font-family-sans-serif;
 	font-size: 16px;
