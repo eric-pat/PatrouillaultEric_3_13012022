@@ -26,12 +26,8 @@
         justify-content: center;
         color: grey;
         &:hover {
-            .functionning__btn {
-                background-color:$colour-senary;
-            }
-            i.fas.fa-mobile-alt, i.fas.fa-list-ul, i.fas.fa-store {
-                color: $colour-primary;
-            }
+            .functionning__btn {background-color:$colour-senary;}
+            i.fas.fa-mobile-alt, i.fas.fa-list-ul, i.fas.fa-store {color: $colour-primary;}
         }
     }
     &.functionning__number {
@@ -65,9 +61,7 @@
             align-items: center;
             padding-left: 8px;
         }
-        &.functionning__step i {
-            margin-left: 20px;
-        }
+        &.functionning__step i {margin-left: 20px;}
     }
 }
 

@@ -32,7 +32,12 @@ h3 {
   font-size: 17px;
 }
 
-@media screen and (min-width: 1024px) {
+#typo {
+  font-family: "Roboto-Medium", sans-serif;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 992px) {
   h1 {
     font-size: 32px;
   }
@@ -625,6 +630,7 @@ h3 {
   position: fixed;
   left: 50%;
   margin-left: -3em;
+  /* center */
   top: 50%;
   z-index: 1;
   width: 100px;
@@ -633,8 +639,8 @@ h3 {
   border-radius: 50%;
   border-top: 14px solid #FF79DA;
   border-bottom: 14px solid #99E2D0;
-  -webkit-animation: spin 2s linear 2;
-          animation: spin 2s linear 2;
+  -webkit-animation: spin 2s linear 1;
+          animation: spin 2s linear 1;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -683,8 +689,8 @@ h3 {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
-  -webkit-animation: overlay__loading 4s;
-          animation: overlay__loading 4s;
+  -webkit-animation: overlay__loading 7s;
+          animation: overlay__loading 7s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -697,7 +703,8 @@ h3 {
     opacity: 1;
   }
   100% {
-    opacity: 0;
+    opacity: 1;
+    position: unset;
   }
 }
 
@@ -709,7 +716,8 @@ h3 {
     opacity: 1;
   }
   100% {
-    opacity: 0;
+    opacity: 1;
+    position: unset;
   }
 }
 

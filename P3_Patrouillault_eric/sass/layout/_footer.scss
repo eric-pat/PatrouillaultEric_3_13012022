@@ -13,12 +13,8 @@
     ul{
         display: flex;
         flex-direction: column;
-        i {
-            padding-right: 10px;
-        }
-        .fa-hands-helping {
-            font-size: 11px;
-        }
+        i {padding-right: 10px;}
+        .fa-hands-helping {font-size: 11px;}
     }
     &.footer__list {
         list-style: none;
@@ -45,14 +41,10 @@
             .fa-hands-helping {
                 font-size: 17px;
             }
-            i {
-                padding: 0;
-            }
+            i {padding: 0;}
         }
         &.footer__list {
-            p {
-                margin-left: 10px;
-            }
+            p {margin-left: 10px;}
         }
     }
 }
@@ -71,9 +63,7 @@
             .fa-hands-helping {
                 font-size: 15px;
             }
-            i {
-                padding-right: 0;
-            }
+            i {padding-right: 0;}
         }
         &.footer__list {
             p {

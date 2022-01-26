@@ -101,18 +101,13 @@
     justify-content: center;
     &.restaurants__card {
         min-width: 345px;
-        img {
-            width: 345px;
-        }
+        img {width: 345px;}
         &.restaurants__txt {
             flex-wrap: wrap;
             justify-content: flex-start;
             min-width: 150px;
-            &.restaurants__card i {
-                padding-left: 240px;
-            }
+            &.restaurants__card i {padding-left: 240px;}
         }
     }
-   
    }
 }

@@ -2,7 +2,7 @@
 .loader{
     position: fixed;
     left: 50%;
-    margin-left: -3em;
+    margin-left: -3em;/* center */
     top: 50%;
     z-index: 1;
     width: 100px;
@@ -11,7 +11,7 @@
     border-radius: 50%;
     border-top: 14px solid $colour-secondary;
     border-bottom: 14px solid $colour-tertiary;
-    animation: spin 2s linear 2;
+    animation: spin 2s linear 1;
     animation-fill-mode: forwards;
 }
 
@@ -29,14 +29,14 @@
     width: 100%;
     background-color: hsla(0, 0%, 0%, 0.5);
     z-index: 1;
-    animation: overlay__loading 4s ;
+    animation: overlay__loading 7s ;
     animation-fill-mode: forwards;
 }
 
 @keyframes overlay__loading {
     0% {opacity: 1;}
     99% {opacity: 1;}
-    100% {opacity: 0; }
+    100% {opacity: 1; position:unset }
 } 
 
 

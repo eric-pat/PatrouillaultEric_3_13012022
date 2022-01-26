@@ -25,7 +25,12 @@ h3 {
 	font-size: 17px;
 }
 
-@media screen and (min-width:1024px) {
+#typo {
+	font-family: $font-family-sans-serif;
+	font-weight: bold;
+}
+
+@media screen and (min-width:992px) {
 	h1 {font-size: 32px;}
 	h2 {font-size: 30px;}
 	p, button {font-size: 20px;}

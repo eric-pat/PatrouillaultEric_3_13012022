@@ -6,9 +6,7 @@
     
 .menu__restaurants {
    @include name-restaurant;
-    h1 {
-        font-size: 28px;
-    }
+    h1 {font-size: 28px;}
     #heart-menu {
         position: absolute;
         right: 40px;
@@ -44,9 +42,7 @@
        @include check;
        opacity: 0;
        width: 1px;
-       i {
-           font-size: 1px;
-       }
+       i {font-size: 1px;}
     }
     &:hover .validate {
         background-color: $colour-tertiary;
@@ -82,9 +78,7 @@
         padding-bottom: 5px;
         font-size: 15px;
     }
-    &:hover {
-        width: 65%;
-    }
+    &:hover {width: 65%;}
 }
 
 .price {
@@ -99,9 +93,7 @@
 .search-and-command {
     justify-content: center;
     padding-top: 35px;
-    &.command-menu {
-       align-items: center;
-    }
+    &.command-menu {align-items: center;}
     &.search__btn {
         padding: 0 50px;
         margin: 0;
@@ -109,21 +101,10 @@
 }
 
 /* animation card */
-.card-1 {
-    animation: fadein 1s;
-}
-
-.card-2 {
-    animation: fadein 2s;
-}
-
-.card-3 {
-    animation: fadein 3s;
-}
-
-.card-4 {
-    animation: fadein 4s;
-}
+.card-1 {animation: fadein 1s;}
+.card-2 {animation: fadein 2s;}
+.card-3 {animation: fadein 3s;}
+.card-4 {animation: fadein 4s;}
 
 @keyframes fadein {
     from {
@@ -167,10 +148,7 @@
         }
     }
 
-    .card {
-        max-width: 325px;
-    }
-
+    .card {max-width: 325px;}
 }
 
 /* tablet */
@@ -187,9 +165,7 @@
         flex-wrap: wrap;
         justify-content: center;
     }
-    .card {
-        max-width: 350px;
-    }
+    .card {max-width: 350px;}
 }
 
 
