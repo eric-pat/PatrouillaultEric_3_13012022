@@ -1,15 +1,19 @@
 @import "./base/base";
 @import "./base/typography";
 
+@import "./utils/mixins";
 @import "./utils/variables";
 
 @import "./layout/header";
+@import "./layout/footer";
 
 @import "./components/btn";
 @import "./components/input";
+@import "./components/list_functionning";
+@import "./components/list_restaurants";
+@import "./components/loading-spinner";
 
-@import "./pages/index"
-
+@import "./pages/menu";
 
 
 

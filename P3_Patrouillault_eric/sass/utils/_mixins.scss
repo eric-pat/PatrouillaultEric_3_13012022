@@ -1,0 +1,46 @@
+/* page index */
+@mixin btn {
+    border: 0;
+    box-shadow: .25rem .25rem 10px rgba(0,0,0,.25);
+}
+
+@mixin heart {
+    &:hover::before {
+        content: "\f004";
+        font-weight: bold;
+        background: -webkit-gradient(linear, left top, left bottom, from($colour-primary), to($colour-secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+/* page menu- */
+@mixin name-restaurant {
+    background-color: $colour-quinary;
+    border-radius: 50px 50px 0 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: -40px;
+    padding: 30px 20px 15px 20px;
+}
+
+@mixin card {
+    background-color: $colour-septenary;
+    border-radius: 15px;
+    cursor: pointer;
+    padding-left:10px;
+    margin: 5px 9px 13px 9px;
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform, 1s;
+}
+
+@mixin check {
+    color: $colour-septenary;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    border-radius: 0 15px 15px 0;
+}

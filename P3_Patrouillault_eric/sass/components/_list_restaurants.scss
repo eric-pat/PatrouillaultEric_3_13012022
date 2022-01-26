@@ -1,0 +1,113 @@
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $colour-quinary;
+    padding-top: 40px;
+    @media screen and (min-width:768px) and (max-width:991px) {
+       align-items: center;
+    }
+}
+
+.restaurants__title {
+    margin-left: 20px;
+    @media screen and (min-width:768px) and (max-width:991px) {
+        margin-left: 0;
+    }
+    @media screen and (min-width:992px) {
+       margin-left: 0;
+       display: flex;
+       justify-content: center;
+    }
+}
+
+/* Restaurants List */
+.restaurants__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    &.restaurants__card {
+        background-color: white;
+        border-radius: 18px ;
+        box-shadow: 0px 0px 3px 0px #0000002e;
+        cursor: pointer;
+        margin: 0 20px 20px 20px;
+        img {
+            height: 170px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 18px 18px 0 0;
+        }
+        &.restaurants__txt {
+            color:black;
+            padding: 0 0 0 10px;
+            margin: 0;
+            box-shadow: none;
+            &.restaurants__name {
+                font-weight: bold;
+                width: 70%;
+                margin: 10px 0 5px 0;
+            }
+            &.restaurants__city {
+                width: 70%;
+                margin-bottom: 18px;
+            }
+            &.restaurants__card i{
+                position: absolute;
+                font-size: 26px;
+                padding: 10px 0 0 275px;
+                color: grey;
+                @include heart;
+            }
+        }
+    }
+}
+
+.new__contenant {
+    position: relative;
+    text-align: center;
+    .new__txt {
+        background-color: $colour-tertiary;
+        color: #0e7238;
+        position: absolute;
+        top: 8%;
+        left: 70%;
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+}
+
+/* Restaurants List tablet */
+@media screen and (min-width:768px) and (max-width:991px) {
+   .restaurants__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 20px;
+    &.restaurants__card {
+        margin: 0  0 20px 0;
+        width: 350px;
+        justify-content: flex-start;
+    }
+   }
+}
+
+/* Restaurants List desktop */
+@media screen and (min-width:992px) {
+   .restaurants__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    &.restaurants__card {
+        min-width: 345px;
+        img {width: 345px;}
+        &.restaurants__txt {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            min-width: 150px;
+            &.restaurants__card i {padding-left: 240px;}
+        }
+    }
+   }
+}

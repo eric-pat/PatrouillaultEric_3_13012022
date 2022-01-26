@@ -1,0 +1,79 @@
+.functionning {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 40px 15px;
+    @media screen and (min-width:768px) and (max-width:991px) {
+        align-items: center;
+    }
+    @media screen and (min-width:992px) {
+        flex-wrap: wrap;
+        flex-direction: row;
+        column-gap: 1000px;
+        align-items: baseline;
+    }
+}
+
+/* Functionning List */
+.functionning__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    &.functionning__step {
+        display: flex;
+        justify-content: center;
+        color: grey;
+        &:hover {
+            .functionning__btn {background-color:$colour-senary;}
+            i.fas.fa-mobile-alt, i.fas.fa-list-ul, i.fas.fa-store {color: $colour-primary;}
+        }
+    }
+    &.functionning__number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 25px;
+        height: 25px;
+        border-radius: 90px;
+        background: $colour-primary;
+        color: #ffffff;
+        position: absolute;
+        margin:-10px
+    }
+    &.functionning__step i {
+        position: absolute;
+        margin-left: 30px;
+        font-size: 21px;
+    }
+}
+
+/* Functionning List tablet */
+@media screen and (min-width:768px) and (max-width:991px) {
+    .functionning__list {
+        flex-direction: row;
+        justify-content: space-between;
+        column-gap: 0px;
+        &.functionning__step {
+            justify-content: flex-start;
+            align-items: center;
+            padding-left: 8px;
+        }
+        &.functionning__step i {margin-left: 20px;}
+    }
+}
+
+/* Functionning List desktop */
+@media screen and (min-width:992px) {
+    .functionning__list {
+        flex-direction: row;
+        column-gap: 15px;
+        align-items: center;
+        &.functionning__step {
+            justify-content: flex-start;
+            padding-left: 8px;
+        }
+    }
+}

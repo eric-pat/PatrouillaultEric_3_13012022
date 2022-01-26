@@ -1,5 +1,28 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+        display: inline-block;
+        font-size: 22px;
+        position: relative;
+        color: black;
+        right: 50px;
+    }
+}
+
 .header__logo {
     display: flex;
     justify-content: center;
     margin: 20px 0 15px 0;
+}
+
+/* desktop */
+@media screen and (min-width:992px) {
+    .header__logo {
+        img {height: 60px;}
+    }
+    .header {
+        i {font-size: 30px;}
+    }
 }
