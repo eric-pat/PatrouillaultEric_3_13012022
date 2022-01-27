@@ -21,7 +21,6 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    margin-top: -40px;
     padding: 30px 20px 15px 20px;
 }
 
@@ -29,18 +28,7 @@
     background-color: $colour-septenary;
     border-radius: 15px;
     cursor: pointer;
-    padding-left:10px;
-    margin: 5px 9px 13px 9px;
-    display: flex;
-    flex-wrap: nowrap;
     transition: transform, 1s;
 }
 
-@mixin check {
-    color: $colour-septenary;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    border-radius: 0 15px 15px 0;
-}
+
