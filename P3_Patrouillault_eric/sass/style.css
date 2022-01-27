@@ -32,7 +32,7 @@ h3 {
   font-size: 17px;
 }
 
-#typo {
+.typo {
   font-family: "Roboto-Medium", sans-serif;
   font-weight: bold;
 }
@@ -148,6 +148,10 @@ h3 {
   padding: 5px 20px;
 }
 
+.footer.footer__list.footer__txt p {
+  color: white;
+}
+
 /* tablet */
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .footer {
@@ -164,7 +168,7 @@ h3 {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    padding: 20px 0 40px 0;
+    padding: 40px 0 60px 0;
   }
   .footer ul .fa-hands-helping {
     font-size: 17px;
@@ -217,8 +221,17 @@ h3 {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 45px 35px 60px 35px;
   background-color: #F2F2F2;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .search-and-command {
+    padding: 20px 35px 60px 35px;
+  }
 }
 
 .search__btn {
@@ -230,7 +243,7 @@ h3 {
   border-radius: 100px;
   height: 50px;
   margin: 30px 40px 0 40px;
-  padding: 12px 24px;
+  padding: 12px 17px;
   color: #fff;
   cursor: pointer;
   font-weight: bold;
@@ -239,6 +252,18 @@ h3 {
 .search__btn:hover {
   background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
   background: linear-gradient(#9356DC, #FF79DA);
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .search__btn {
+    padding: 12px 35px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .search__btn {
+    padding: 12px 35px;
+  }
 }
 
 /* step functionning */
@@ -404,11 +429,12 @@ h3 {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-column-gap: 0px;
-            column-gap: 0px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-column-gap: 25px;
+            column-gap: 25px;
   }
   .functionning__list.functionning__step {
     -webkit-box-pack: start;
@@ -722,10 +748,15 @@ h3 {
 }
 
 /* header menu */
+.menu__img {
+  height: 215px;
+}
+
 .menu__img img {
+  height: 260px;
   width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .menu__restaurants {
@@ -739,7 +770,6 @@ h3 {
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
-  margin-top: -40px;
   padding: 30px 20px 15px 20px;
 }
 
@@ -764,7 +794,7 @@ h3 {
 /* all menu */
 .menu-integral {
   background-color: #F2F2F2;
-  padding-bottom: 20px;
+  padding: 0 15px 20px 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -775,10 +805,12 @@ h3 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 .part-menu {
   padding-bottom: 25px;
+  width: 99%;
 }
 
 .title {
@@ -792,22 +824,70 @@ h3 {
   background-color: white;
   border-radius: 15px;
   cursor: pointer;
-  padding-left: 10px;
-  margin: 5px 9px 13px 9px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
   -webkit-transition: 1s, -webkit-transform;
   transition: 1s, -webkit-transform;
   transition: transform, 1s;
   transition: transform, 1s, -webkit-transform;
-  max-width: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.card.txt {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px 0 10px 5px;
+  white-space: nowrap;
+  /*le texte ne revient pas à la ligne*/
+  text-overflow: ellipsis;
+  /*la fin du texte fini par ...*/
+  overflow: hidden;
+  /*coupe le texte si il depasse */
+  width: 97%;
+}
+
+.card.txt.name {
+  font-family: "Roboto-Medium", sans-serif;
+  font-weight: bolder;
+  padding-bottom: 4px;
+  padding-top: 5px;
+  display: inline-block;
+  /* overflow, text-overflow */
+}
+
+.card.txt.accompaniment {
+  padding-top: 0;
+  padding-bottom: 5px;
+  font-size: 15px;
+  display: inline-block;
+  /* overflow, text-overflow */
+}
+
+.card.price {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  font-weight: bold;
+  font-family: "Roboto-Medium", sans-serif;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding-bottom: 15px;
 }
 
 .card.validate {
-  color: white;
+  width: 25px;
+  border-radius: 0 15px 15px 0;
+  position: relative;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -815,21 +895,40 @@ h3 {
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0;
-  padding: 0;
-  border-radius: 0 15px 15px 0;
-  opacity: 0;
-  width: 1px;
 }
 
 .card.validate i {
-  font-size: 1px;
+  color: white;
+}
+
+.card.full-color:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: #99E2D0;
+  -webkit-transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
+  -webkit-transition-property: top, bottom, left,right, border-width;
+  transition-property: top, bottom, left,right, border-width;
+}
+
+.card.to-left:after {
+  left: 100%;
+}
+
+.card.to-left:hover:after {
+  left: 0;
 }
 
 .card:hover .validate {
   background-color: #99E2D0;
-  color: white;
   width: 55px;
-  opacity: 1;
+  margin-left: 20px;
 }
 
 .card:hover .validate i {
@@ -840,53 +939,8 @@ h3 {
   transition: -webkit-transform 1s ease-in-out;
   transition: transform 1s ease-in-out;
   transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
-}
-
-.txt {
-  width: 97%;
-  display: inline-block;
-  font-family: "Roboto-Medium", sans-serif;
-  padding-top: 10px;
-}
-
-.txt.name {
-  white-space: nowrap;
-  /*le texte ne revient pas à la ligne*/
-  text-overflow: ellipsis;
-  /*la fin du texte fini par ...*/
-  overflow: hidden;
-  /*coupe le texte si il depasse */
-  font-weight: bold;
-  padding-bottom: 0;
-  padding-top: 5px;
-}
-
-.txt.accompaniment {
-  white-space: nowrap;
-  /*le texte ne revient pas à la ligne*/
-  text-overflow: ellipsis;
-  /*la fin du texte fini par ...*/
-  overflow: hidden;
-  /*coupe le texte si il depasse */
-  padding-top: 0;
-  padding-bottom: 5px;
-  font-size: 15px;
-}
-
-.txt:hover {
-  width: 65%;
-}
-
-.price {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-weight: bold;
-  font-family: "Roboto-Medium", sans-serif;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  padding: 35px 0 0 0;
+  display: block;
+  padding: 0;
 }
 
 /* button command */
@@ -912,21 +966,25 @@ h3 {
 .card-1 {
   -webkit-animation: fadein 1s;
           animation: fadein 1s;
+  margin-bottom: 15px;
 }
 
 .card-2 {
   -webkit-animation: fadein 2s;
           animation: fadein 2s;
+  margin-bottom: 15px;
 }
 
 .card-3 {
   -webkit-animation: fadein 3s;
           animation: fadein 3s;
+  margin-bottom: 15px;
 }
 
 .card-4 {
   -webkit-animation: fadein 4s;
           animation: fadein 4s;
+  margin-bottom: 15px;
 }
 
 @-webkit-keyframes fadein {
@@ -972,6 +1030,12 @@ h3 {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .menu-integral .part-menu {
+    width: 30%;
   }
   .menu__restaurants {
     -webkit-box-orient: horizontal;
@@ -995,9 +1059,6 @@ h3 {
     margin-left: 70px;
     font-size: 40px;
   }
-  .card {
-    max-width: 325px;
-  }
 }
 
 /* tablet */
@@ -1006,6 +1067,14 @@ h3 {
     -o-object-fit: cover;
        object-fit: cover;
     height: 325px;
+  }
+  .menu__restaurants {
+    margin-bottom: -2px;
+    /* supperpose menu__restaurant et menu__img */
+  }
+  .part-menu {
+    width: 50%;
+    padding: 10px 15px;
   }
   .menu-integral {
     -webkit-box-orient: horizontal;
@@ -1017,9 +1086,9 @@ h3 {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-  }
-  .card {
-    max-width: 350px;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
 }
 
