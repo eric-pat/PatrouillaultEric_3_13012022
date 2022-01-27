@@ -1,8 +1,12 @@
 /* header menu */
-.menu__img img{
-    width: 100%;
-    object-fit: contain;
-} 
+.menu__img {
+    height: 215px;
+    img {
+        height: 260px;
+        width: 100%;
+        object-fit: cover;
+    }
+}
     
 .menu__restaurants {
    @include name-restaurant;
@@ -18,14 +22,16 @@
 /* all menu */
 .menu-integral {
     background-color: $colour-quinary;
-    padding-bottom: 20px;
+    padding: 0 15px 20px 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .part-menu {
     padding-bottom: 25px;
+    width: 99%;
 }
 
 .title {
@@ -37,57 +43,81 @@
 
 .card {
     @include card;
-    max-width: 400px;
+    display: flex;
+    flex-direction: row;
+   
+    &.txt {
+        flex-direction: column;
+        padding: 10px 0 10px 5px;
+        white-space: nowrap; /*le texte ne revient pas à la ligne*/
+        text-overflow: ellipsis;/*la fin du texte fini par ...*/
+        overflow: hidden;/*coupe le texte si il depasse */
+        width: 97%;
+        &.name {
+            font-family: $font-family-sans-serif;
+            font-weight: bolder;
+            padding-bottom: 4px;
+            padding-top: 5px;
+            display: inline-block;/* overflow, text-overflow */
+        }
+        &.accompaniment {
+            padding-top: 0;
+            padding-bottom: 5px;
+            font-size: 15px;
+            display: inline-block;/* overflow, text-overflow */
+        }
+    }
+    &.price {
+        justify-content: flex-end;
+        align-items: flex-end;
+        font-weight: bold;
+        font-family: $font-family-sans-serif;
+        flex: 1;
+        padding-bottom: 15px;
+    }
     &.validate {
-       @include check;
-       opacity: 0;
-       width: 1px;
-       i {font-size: 1px;}
+        width: 25px;
+        border-radius: 0 15px 15px 0;
+        position:relative;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        i {
+            color: $colour-septenary;
+        }
+    }
+    &.full-color:after{
+        content:'';
+        display:block;
+        position:absolute;
+        bottom:0;
+        top:0;
+        left:0;
+        right:0;
+        z-index:1;
+        background-color: $colour-tertiary;
+        transition :  0.35s ease-in-out;
+        transition-property : top, bottom, left,right, border-width;
+    }
+    &.to-left:after{
+    left:100%;
+    }
+    &.to-left:hover:after{
+    left:0;
     }
     &:hover .validate {
         background-color: $colour-tertiary;
-        color: $colour-septenary;
-        width: 55px; 
-        opacity: 1;
+        width: 55px;
+        margin-left: 20px;
         i {
             font-size: 22px;
-            transform: rotate(+360deg);
-            transition: transform 1s ease-in-out
+            transform: rotate(360deg);
+            transition: transform 1s ease-in-out;
+            display: block;
+            padding: 0;
         }
     }
 }  
-
-.txt {
-    width: 97%;
-    display: inline-block;
-    font-family: $font-family-sans-serif;
-    padding-top: 10px;
-    &.name {
-        white-space: nowrap; /*le texte ne revient pas à la ligne*/
-        text-overflow: ellipsis;/*la fin du texte fini par ...*/
-        overflow: hidden;/*coupe le texte si il depasse */
-        font-weight: bold;
-        padding-bottom: 0;
-        padding-top: 5px;
-    }
-    &.accompaniment {
-        white-space: nowrap; /*le texte ne revient pas à la ligne*/
-        text-overflow: ellipsis;/*la fin du texte fini par ...*/
-        overflow: hidden;/*coupe le texte si il depasse */
-        padding-top: 0;
-        padding-bottom: 5px;
-        font-size: 15px;
-    }
-    &:hover {width: 65%;}
-}
-
-.price {
-    justify-content: center;
-    font-weight: bold;
-    font-family: $font-family-sans-serif;
-    flex: 1;
-    padding: 35px 0 0 0;
-}
 
 /* button command */
 .search-and-command {
@@ -101,10 +131,22 @@
 }
 
 /* animation card */
-.card-1 {animation: fadein 1s;}
-.card-2 {animation: fadein 2s;}
-.card-3 {animation: fadein 3s;}
-.card-4 {animation: fadein 4s;}
+.card-1 {
+    animation: fadein 1s;
+    margin-bottom: 15px;
+}
+.card-2 {
+    animation: fadein 2s;
+    margin-bottom: 15px;
+}
+.card-3 {
+    animation: fadein 3s;
+    margin-bottom: 15px;
+}
+.card-4 {
+    animation: fadein 4s;
+    margin-bottom: 15px;
+}
 
 @keyframes fadein {
     from {
@@ -130,6 +172,10 @@
         flex-wrap: nowrap;
         justify-content: space-evenly;
         flex-direction: row;
+        align-items: flex-start;
+        .part-menu {
+            width: 30%;
+        }
     }
 
     .menu__restaurants{
@@ -147,9 +193,8 @@
             font-size: 40px;
         }
     }
-
-    .card {max-width: 325px;}
 }
+
 
 /* tablet */
 @media screen and (min-width:768px) and (max-width:991px) {
@@ -160,12 +205,22 @@
         }
     }
 
+    .menu__restaurants {
+        margin-bottom: -2px;/* supperpose menu__restaurant et menu__img */
+    }
+
+    .part-menu {
+        width: 50%;
+        padding:10px 15px;
+    }
+
     .menu-integral {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+        align-items: flex-start;
+        
     }
-    .card {max-width: 350px;}
 }
 
 

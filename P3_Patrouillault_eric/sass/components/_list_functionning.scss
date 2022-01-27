@@ -54,8 +54,9 @@
 @media screen and (min-width:768px) and (max-width:991px) {
     .functionning__list {
         flex-direction: row;
-        justify-content: space-between;
-        column-gap: 0px;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        column-gap: 25px;
         &.functionning__step {
             justify-content: flex-start;
             align-items: center;
