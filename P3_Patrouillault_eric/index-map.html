@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+        integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+        crossorigin="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Shrikhand&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="sass/style.css" type="text/css">
+    <title>ohmyfood</title>
+    <style type="text/css">
+        #map {
+            /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+  <!--   <div class="overlay"></div>
+    <div class="loader"></div> -->
+
+    <header>
+        <a class="header__logo" href="index.html">
+            <img src="images/logo/ohmyfood@2x.svg" alt="Logo ohmyfood" />
+        </a>
+    </header>
+
+    <main>
+
+        <!-- Search -->
+        <section>
+            <form>
+                <div class="search__city">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <input class="search__city search__input" type="text" value="Paris, Belleville" />
+                </div>
+
+                <div class="search-and-command">
+                    <h1 class="typo">Réservez le menu qui vous convient</h1>
+                    <p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
+                    <button class="btn search__btn" type="submit">Explorer nos restaurants</button>
+                </div>
+            </form>
+        </section>
+        <!-- End Search -->
+
+        <div id="map">
+            <!-- Ici s'affichera la carte -->
+        </div>
+        <!-- Fichiers Javascript -->
+        <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+            integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+            crossorigin=""></script>
+        <script type="text/javascript">
+            // On initialise la latitude et la longitude de Paris (centre de la carte)
+            var lat = 48.852969;
+            var lon = 2.349903;
+            var macarte = null;
+            var villes = {
+                "Floreal": { "lat": 48.870286, "lon": 2.384586 },
+                "La Cantine de Belleville": { "lat": 48.870659, "lon": 2.378856 },
+                "Lao Siam": { "lat": 48.873151, "lon": 2.380777 }
+            };
+            // Fonction d'initialisation de la carte
+            function initMap() {
+                // Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
+                macarte = L.map('map').setView([lat, lon], 11);
+                // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
+                L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+                    // Il est toujours bien de laisser le lien vers la source des données
+                    attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
+                    minZoom: 1,
+                    maxZoom: 20
+                }).addTo(macarte);
+                // Nous parcourons la liste des villes
+                for (ville in villes) {
+                    var marker = L.marker([villes[ville].lat, villes[ville].lon]).addTo(macarte);
+                    // Nous ajoutons la popup. A noter que son contenu (ici la variable ville) peut être du HTML
+                    marker.bindPopup(ville);
+                }
+            }
+            window.onload = function () {
+                // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
+                initMap();
+            };
+        </script>
+
+        <!-- Functionning -->
+        <section class="functionning">
+            <h2 class="typo">Fonctionnement</h2>
+            <!-- list -->
+            <ol class="functionning__list">
+                <li>
+                    <div class="functionning__list functionning__step">
+                        <span class="functionning__list functionning__step functionning__number">1</span>
+                        <i class="fas fa-mobile-alt"></i>
+                        <button class="btn functionning__btn">Choisissez un restaurant</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="functionning__list functionning__step">
+                        <span class="functionning__list functionning__step functionning__number">2</span>
+                        <i class="fas fa-list-ul"></i>
+                        <button class="btn functionning__btn">Composez votre menu</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="functionning__list functionning__step">
+                        <span class="functionning__list functionning__step functionning__number">3</span>
+                        <i class="fas fa-store"></i>
+                        <button class="btn functionning__btn">Dégustez au restaurant</button>
+                    </div>
+                </li>
+            </ol>
+        </section>
+        <!-- End Functionning -->
+
+        <!-- List Restaurants -->
+        <section class="cards-container">
+            <h2 class="restaurants__title typo">Restaurants</h2>
+
+            <!-- Cards -->
+            <ul class="restaurants__list">
+
+                <!--Card-->
+                <li class="restaurants__list restaurants__card">
+                    <a href="menu-1.html">
+                        <div class="new__contenant">
+                            <img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
+                                alt="La palette du goût" />
+                            <div class="new__contenant new__txt">Nouveau</div>
+                        </div>
+                        <div class="restaurants__list restaurants__card restaurants__txt">
+                            <p class="restaurants__list restaurants__card restaurants__txt restaurants__name">La palette
+                                du goût</p>
+                            <i class="far fa-heart"></i>
+                            <p class="restaurants__list restaurants__card restaurants__txt restaurants__city">
+                                Ménilmontant</p>
+                        </div>
+                    </a>
+                </li>
+                <!-- End card -->
+
+                <!--Card-->
+                <li class="restaurants__list restaurants__card">
+                    <a href="menu-2.html">
+                        <div class="new__contenant">
+                            <img src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La note enchantée" />
+                            <div class="new__contenant new__txt">Nouveau</div>
+                        </div>
+                        <div class="restaurants__list restaurants__card restaurants__txt">
+                            <p class="restaurants__list restaurants__card restaurants__txt restaurants__name">La note
+                                enchantée</p>
+                            <i class="far fa-heart"></i>
+                            <p class="restaurants__list restaurants__card restaurants__txt restaurants__city">Charonne
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <!-- End card -->
+
+                <!--Card-->
+                <li class="restaurants__list restaurants__card">
+                    <a href="menu-3.html">
+                        <div>
+                            <img src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash2.jpg" alt="À la française" />
+                        </div>
+                        <div class="restaurants__list restaurants__card restaurants__txt">
+                            <p class="restaurants__list restaurants__card restaurants__txt restaurants__name">À la
+                                française</p>
+                            <i class="far fa-heart"></i>
+                            <p class="restaurants__list restaurants__card restaurants__txt restaurants__city">Cité Rouge
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <!-- End card -->
+
+                <!--Card-->
+                <li class="restaurants__list restaurants__card">
+                    <a href="menu-4.html">
+                        <div>
+                            <img src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
+                                alt="Le délice des sens" />
+                        </div>
+                        <div class="restaurants__list restaurants__card restaurants__txt">
+                            <p class="restaurants__list restaurants__card restaurants__txt restaurants__name">Le délice
+                                des sens</p>
+                            <i class="far fa-heart"></i>
+                            <p class="restaurants__list restaurants__card restaurants__txt restaurants__city">
+                                Folie-Méricourt</p>
+                        </div>
+                    </a>
+                </li>
+                <!-- End card -->
+
+            </ul>
+            <!-- End Cards-->
+
+        </section>
+        <!-- End List Restaurants -->
+
+    </main>
+
+    <footer class="footer">
+        <a href="index.html">
+            <img src="images/logo/ohmyfood2.png" alt="Logo ohmyfood" />
+        </a>
+        <ul class="footer footer__list">
+            <li class="footer footer__list footer__txt">
+                <i class="fas fa-utensils"></i>
+                <p>Proposer un restaurant</p>
+            </li>
+            <li class="footer footer__list footer__txt">
+                <i class="fas fa-hands-helping"></i>
+                <p>Devenir partenaire</p>
+            </li>
+            <li class="footer footer__list footer__txt">
+                <p>Mentions légales</p>
+            </li>
+            <li class="footer footer__list footer__txt">
+                <a href="mailto:ohmyfoodRetul1981@gustr.com">
+                    <p>Contact</p>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+</body>
+
+</html>
