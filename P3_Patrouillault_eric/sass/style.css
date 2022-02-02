@@ -633,10 +633,10 @@ h3 {
             justify-content: center;
   }
   .restaurants__list.restaurants__card {
-    min-width: 345px;
+    width: 350px;
   }
   .restaurants__list.restaurants__card img {
-    min-width: 345px;
+    width: 350px;
   }
   .restaurants__list.restaurants__card.restaurants__txt {
     -ms-flex-wrap: wrap;
