@@ -636,7 +636,7 @@ h3 {
     min-width: 345px;
   }
   .restaurants__list.restaurants__card img {
-    width: 345px;
+    min-width: 345px;
   }
   .restaurants__list.restaurants__card.restaurants__txt {
     -ms-flex-wrap: wrap;
@@ -835,6 +835,7 @@ h3 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  /*animation check */
 }
 
 .card.txt {

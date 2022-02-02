@@ -105,6 +105,7 @@
     &.to-left:hover:after{
     left:0;
     }
+    /*animation check */
     &:hover .validate {
         background-color: $colour-tertiary;
         width: 55px;
