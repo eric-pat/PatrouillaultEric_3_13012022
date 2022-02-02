@@ -100,8 +100,8 @@
     flex-wrap: wrap;
     justify-content: center;
     &.restaurants__card {
-        min-width: 345px;
-        img {min-width: 345px;}
+        width: 350px;
+        img {width: 350px;}
         &.restaurants__txt {
             flex-wrap: wrap;
             justify-content: flex-start;
